@@ -1,5 +1,5 @@
 function TableHeader(){
-    /* responsible for rendering the head of our table with the appropriate columns */
+  
     return(
         <thead>
         <tr>
@@ -12,8 +12,7 @@ function TableHeader(){
 }
 
 const TableBody = (props) => {
-    // boilerplate table body functional component
-    // we use Array.map to create table rows from LinkData passed via props
+
     const rows = props.linkData.map((row, index) => {
       return (
         <tr key={index}>
@@ -32,11 +31,16 @@ const TableBody = (props) => {
   }
 
 
-function Table(){
+function Table(props){
+
+  const handleRemove = (index) =>{
+    
+  }
+
     return(
         <table>
         <TableHeader/>
-        <TableBody/>
+        <TableBody linkData={props.linkData} removeLink={handleRemove}/>
         </table>
     )
 }
